@@ -91,16 +91,19 @@ Go to the directory in which you downloaded the OpenVINO toolkit. This document 
 ``
 cd ~/Downloads
 ``
+
 By default, the package file is saved as l_openvino_toolkit_raspbi_p_<version>.tgz. Create an installation folder.
  
 ``
 sudo mkdir -p /opt/intel/openvino
 ``
+
 Unpack the archive:
 
 ``
 sudo tar -xf l_openvino_toolkit_raspbi_p_<version>.tgz --strip 1 -C /opt/intel/openvino
 ``
+
 Now the OpenVINO toolkit components are installed. Additional configuration steps are still required. Continue to the next sections to install External Software Dependencies, configure the environment and set up USB rules.
 
 CMake* version 3.7.2 or higher is required for building the Inference Engine sample application. To install, open a Terminal* window and run the following command:
@@ -108,20 +111,45 @@ CMake* version 3.7.2 or higher is required for building the Inference Engine sam
 ``
 sudo apt install cmake
 ``
+
 You must update several environment variables before you can compile and run OpenVINO toolkit applications. Run the following script to temporarily set the environment variables:
 
 ``
 source /opt/intel/openvino/bin/setupvars.sh
 ``
+
 NOTE: OpenVINO environment variables are removed when you close the shell. As an option, you can permanently set the environment variables as follows:
 ``
 echo "source /opt/intel/openvino/bin/setupvars.sh" >> ~/.bashrc
 ``
+
 To test your change, open a new terminal. You will see the following:
 
 ``
 [setupvars.sh] OpenVINO environment initialized
 ``
+
+Add the current Linux user to the users group:
+
+``
+sudo usermod -a -G users "$(whoami)"
+``
+
+Log out and log in for it to take effect.If you didn't modify .bashrc to permanently set the environment variables, run setupvars.sh again after logging in. To perform inference on the Intel® Movidius™ Neural Compute Stick or Intel® Neural Compute Stick 2, install the USB rules running the install_NCS_udev_rules.sh script:
+
+``
+sh /opt/intel/openvino/install_dependencies/install_NCS_udev_rules.sh
+``
+
+The installation is now complete. 
+
+STEP 3 - Running the model on the Raspberry Pi:
+
+
+
+
+
+
 
 
 
