@@ -2,7 +2,7 @@
 
 This project explains how to setup the enviroment in order to run the door detector. 
 
-Step 1 - Installing tensorflow object detection API (Ubuntu 16.04 or higher);
+STEP 1 - Installing tensorflow object detection API (Ubuntu 16.04 or higher):
  
 The tensorflow object detection API requiers the following python 3.6 libraries: 
 Protobuf 3.0.0
@@ -61,4 +61,67 @@ The above installation guide can be found at the following links;
 https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
 
 https://www.youtube.com/watch?v=COlbP62-B-U&list=PLQVvvaa0QuDcNK5GeCQnxYnSSaar2tpku
+
+STEP 2 - Installing Intel OpenVINO SDK on Raspberry Pi:
+
+Requirements:
+
+Hardware
+
+    Raspberry Pi* board with ARM* ARMv7-A CPU architecture. Check that uname -m returns armv7l.
+
+    One of Intel® Movidius™ Visual Processing Units (VPU):
+        Intel® Movidius™ Neural Compute Stick
+        Intel® Neural Compute Stick 2
+
+Operating Systems
+
+    Raspbian* Buster, 32-bit
+    Raspbian* Stretch, 32-bit
+
+Software
+
+    CMake* 3.7.2 or higher
+    
+First you must download OpenVINO toolkit from the following link - https://download.01.org/opencv/2019/openvinotoolkit/
+
+Open the Terminal* or your preferred console application.
+Go to the directory in which you downloaded the OpenVINO toolkit. This document assumes this is your ~/Downloads directory. If not, replace ~/Downloads with the directory where the file is located.
+
+``
+cd ~/Downloads
+``
+By default, the package file is saved as l_openvino_toolkit_raspbi_p_<version>.tgz. Create an installation folder.
+ 
+``
+sudo mkdir -p /opt/intel/openvino
+``
+Unpack the archive:
+
+``
+sudo tar -xf l_openvino_toolkit_raspbi_p_<version>.tgz --strip 1 -C /opt/intel/openvino
+``
+Now the OpenVINO toolkit components are installed. Additional configuration steps are still required. Continue to the next sections to install External Software Dependencies, configure the environment and set up USB rules.
+
+CMake* version 3.7.2 or higher is required for building the Inference Engine sample application. To install, open a Terminal* window and run the following command:
+
+``
+sudo apt install cmake
+``
+You must update several environment variables before you can compile and run OpenVINO toolkit applications. Run the following script to temporarily set the environment variables:
+
+``
+source /opt/intel/openvino/bin/setupvars.sh
+``
+NOTE: OpenVINO environment variables are removed when you close the shell. As an option, you can permanently set the environment variables as follows:
+``
+echo "source /opt/intel/openvino/bin/setupvars.sh" >> ~/.bashrc
+``
+To test your change, open a new terminal. You will see the following:
+
+``
+[setupvars.sh] OpenVINO environment initialized
+``
+
+
 
