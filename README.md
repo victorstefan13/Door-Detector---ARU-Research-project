@@ -4,17 +4,17 @@ This project explains how to setup the enviroment in order to run the door detec
 
 STEP 1 - Installing tensorflow object detection API (Ubuntu 16.04 or higher):
  
-The tensorflow object detection API requiers the following python 3.6 libraries: 
-Protobuf 3.0.0
-Python-tk
-Pillow 1.0
-lxml
-tf Slim (which is included in the "tensorflow/models/research/" checkout)
-Jupyter notebook
-Matplotlib
-Tensorflow (>=1.12.0)
-Cython
-contextlib2
+  The tensorflow object detection API requiers the following python 3.6 libraries: 
+  Protobuf 3.0.0
+  Python-tk
+  Pillow 1.0
+  lxml
+  tf Slim (which is included in the "tensorflow/models/research/" checkout)
+  Jupyter notebook
+  Matplotlib
+  Tensorflow (>=1.12.0)
+  Cython
+  contextlib2
 
 For detailed steps to install Tensorflow, follow the Tensorflow installation instructions, however a typical user can install Tensorflow using one of the following commands:
  
@@ -71,8 +71,8 @@ Hardware
     Raspberry Pi* board with ARM* ARMv7-A CPU architecture. Check that uname -m returns armv7l.
 
     One of Intel® Movidius™ Visual Processing Units (VPU):
-        Intel® Movidius™ Neural Compute Stick
-        Intel® Neural Compute Stick 2
+    Intel® Movidius™ Neural Compute Stick
+    Intel® Neural Compute Stick 2
 
 Operating Systems
 
@@ -142,9 +142,6 @@ sh /opt/intel/openvino/install_dependencies/install_NCS_udev_rules.sh
 ``
 
 The installation is now complete. 
-
-STEP 3 - Running the model on the Raspberry Pi:
-
 
 
 
