@@ -1,4 +1,4 @@
-#How to set up the object detector: 
+How to set up the object detector: 
 
 Copy and paste the sample code, images folder and the folder containing the pre trained model to your directory (models/research/object_detection). 
 
